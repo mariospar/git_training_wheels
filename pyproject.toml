@@ -15,12 +15,16 @@ setuptools = "^62.1.0"
 
 [tool.poetry.dev-dependencies]
 pylint = "^2.13.7"
-black = "^22.3.0"
 tox = "^3.25.0"
 flake8 = "^4.0.1"
 pytest = "^7.1.2"
 pytest-cov = "^3.0.0"
 mypy = "^0.950"
+pre-commit = "^2.18.1"
+black = {version = "^22.3.0", allow-prereleases = true}
+isort = "^5.10.1"
+commitizen = "^2.24.0"
+coverage = "^6.3.2"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
@@ -30,7 +34,31 @@ build-backend = "poetry.core.masonry.api"
 target-version = ['py38', 'py39', 'py310']
 line-length = 100
 include_trailing_comma = false
-include = '*/**/.py'
+include = '\.pyi?$'
+exclude = '''
+
+(
+  /(
+      \.eggs         # exclude a few common directories in the
+    | \.git          # root of the project
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | venv
+    | _build
+    | buck-out
+    | build
+    | dist
+  )/
+)
+'''
+
+[tool.isort]
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+line_length = 80
 
 [tool.pylint.format]
 max-line-length = 120
@@ -606,3 +634,22 @@ max-statements = 50
 
 # Minimum number of public methods for a class (see R0903).
 min-public-methods = 2
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+version = "0.1.0"
+version_files = [
+    "pyproject.toml:version"
+]
+style = [
+    ["qmark", "fg:#ff9d00 bold"],
+    ["question", "bold"],
+    ["answer", "fg:#ff9d00 bold"],
+    ["pointer", "fg:#ff9d00 bold"],
+    ["highlighted", "fg:#ff9d00 bold"],
+    ["selected", "fg:#cc5454"],
+    ["separator", "fg:#cc5454"],
+    ["instruction", ""],
+    ["text", ""],
+    ["disabled", "fg:#858585 italic"]
+]

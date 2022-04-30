@@ -1,7 +1,10 @@
-from setuptools import setup, find_packages
+# -*- coding: utf-8 -*-
+from os import name as os_name
+from os import path, walk
+from sys import version_info
+from typing import List
 
-from os import path, walk, name
-from sys import version_info, platform
+from setuptools import find_packages, setup
 
 name = "git_training_wheels"
 
@@ -19,14 +22,14 @@ packages = [
 ]
 
 # Scripts
-scripts = []
+scripts: List[str] = []
 for dirname, dirnames, filenames in walk("scripts"):
     scripts.extend(
         path.join(dirname, filename) for filename in filenames if not filename.endswith(".bat")
     )
 
 # Provide bat executables in the tarball (always for Win)
-if name in {"ce", "nt"}:
+if os_name in {"ce", "nt"}:
     scripts.extend(f"{script}.bat" for script in scripts[:])
 
 # Data_files (e.g. docs) need (directory, files-in-this-directory) tuples
@@ -67,6 +70,7 @@ kw = {
     "version": "0.1.0",
     "description": "Get to know git from the CLI!",
     "long_description": open(path.join(rootdir, "README.md"), encoding="utf-8").read(),
+    "long_description_content_type": "text/markdown",
     "author": "Marios Paraskevas",
     "author_email": "mariosparaskevas00@gmail.com",
     "license": "MIT License",
