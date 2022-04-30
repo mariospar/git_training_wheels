@@ -39,7 +39,9 @@ repos:
 -   repo: local
     hooks:
       - id: changelog
-        name: update-changelog
-        language: system
+        name: commitizen changelog
         entry: cz changelog
+        language: python
+        always_run: true
+        language_version: python3
         stages: [post-commit]
