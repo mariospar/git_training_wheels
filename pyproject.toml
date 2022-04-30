@@ -6,14 +6,21 @@ authors = ["Marios Paraskevas <mariosparaskevas00@gmail.com>"]
 license = "MIT"
 readme = "README.md"
 repository = "https://github.com/mariospar/git_training_wheels.git"
+homepage = "https://github.com/mariospar/git_training_wheels.git"
+keywords = ["git", "git_training_wheels", "git tutorial"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
+setuptools = "^62.1.0"
 
 [tool.poetry.dev-dependencies]
-pytest = "^5.2"
 pylint = "^2.13.7"
 black = "^22.3.0"
+tox = "^3.25.0"
+flake8 = "^4.0.1"
+pytest = "^7.1.2"
+pytest-cov = "^3.0.0"
+mypy = "^0.950"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
