@@ -1,6 +1,6 @@
 # Contributing
 
-First fork this project.  
+First fork this project.
 
 * git clone <https://github.com/mariospar/git_training_wheels.git>
 * npm install
