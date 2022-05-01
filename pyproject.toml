@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "git_training_wheels"
-version = "0.1.0"
+version = "0.0.1"
 description = "Get to know git from the CLI!"
 authors = ["Marios Paraskevas <mariosparaskevas00@gmail.com>"]
 license = "MIT"
@@ -21,7 +21,7 @@ pytest = "^7.1.2"
 pytest-cov = "^3.0.0"
 mypy = "^0.950"
 pre-commit = "^2.18.1"
-black = {version = "^22.3.0", allow-prereleases = true}
+black = { version = "^22.3.0", allow-prereleases = true }
 isort = "^5.10.1"
 commitizen = "^2.24.0"
 coverage = "^6.3.2"
@@ -81,10 +81,6 @@ ignore = '.git,venv'
 # Add files or directories matching the regex patterns to the blacklist. The
 # regex matches against base names, not paths.
 ignore-patterns = ''
-
-# Python code to execute, usually for sys.path manipulation such as
-# pygtk.require().
-#init-hook=
 
 # Use multiple processes to speed up Pylint. Specifying 0 will auto-detect the
 # number of processors available to use.
@@ -639,18 +635,46 @@ min-public-methods = 2
 [tool.commitizen]
 name = "cz_conventional_commits"
 version = "0.1.0"
-version_files = [
-    "pyproject.toml:version"
-]
+version_files = ["pyproject.toml:version"]
 style = [
-    ["qmark", "fg:#ff9d00 bold"],
-    ["question", "bold"],
-    ["answer", "fg:#ff9d00 bold"],
-    ["pointer", "fg:#ff9d00 bold"],
-    ["highlighted", "fg:#ff9d00 bold"],
-    ["selected", "fg:#cc5454"],
-    ["separator", "fg:#cc5454"],
-    ["instruction", ""],
-    ["text", ""],
-    ["disabled", "fg:#858585 italic"]
+  [
+    "qmark",
+    "fg:#ff9d00 bold",
+  ],
+  [
+    "question",
+    "bold",
+  ],
+  [
+    "answer",
+    "fg:#ff9d00 bold",
+  ],
+  [
+    "pointer",
+    "fg:#ff9d00 bold",
+  ],
+  [
+    "highlighted",
+    "fg:#ff9d00 bold",
+  ],
+  [
+    "selected",
+    "fg:#cc5454",
+  ],
+  [
+    "separator",
+    "fg:#cc5454",
+  ],
+  [
+    "instruction",
+    "",
+  ],
+  [
+    "text",
+    "",
+  ],
+  [
+    "disabled",
+    "fg:#858585 italic",
+  ],
 ]
