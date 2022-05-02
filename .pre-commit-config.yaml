@@ -61,8 +61,3 @@ repos:
     hooks:
     -   id: tox-ini-fmt
         args: ["-p", "fix_lint,type"]
--   repo: https://github.com/commitizen-tools/commitizen
-    rev: v2.24.0
-    hooks:
-      - id: commitizen
-        stages: [commit-msg]
