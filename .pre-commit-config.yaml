@@ -1,6 +1,16 @@
 # See https://pre-commit.com for more information
 # See https://pre-commit.com/hooks.html for more hooks
 repos:
+-   repo: https://github.com/sondrelg/pep585-upgrade
+    rev: v1.0.1
+    hooks:
+    -   id: upgrade-type-hints
+-   repo: https://github.com/Lucas-C/pre-commit-hooks-safety
+    rev: v1.2.4
+    hooks:
+    -   id: python-safety-dependencies-check
+        files: pyproject.toml
+        args: [--full-report]
 -   repo: https://github.com/PyCQA/isort
     rev: 5.10.1
     hooks:
@@ -31,6 +41,26 @@ repos:
     hooks:
         - id: mypy
           additional_dependencies: [pydantic]
+# -   repo: https://github.com/PyCQA/bandit
+#     rev: 1.7.4
+#     hooks:
+#     - id: bandit
+#       args: ["--exclude", "tests"]
+-   repo: https://github.com/pappasam/toml-sort
+    rev: v0.20.0
+    hooks:
+    -   id: toml-sort
+        args:
+          - --all
+          - --in-place
+          - --no-header
+          - --ignore-case
+        files: pyproject.toml
+-   repo: https://github.com/tox-dev/tox-ini-fmt
+    rev: "0.5.2"
+    hooks:
+    -   id: tox-ini-fmt
+        args: ["-p", "fix_lint,type"]
 -   repo: https://github.com/commitizen-tools/commitizen
     rev: v2.24.0
     hooks:

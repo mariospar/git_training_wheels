@@ -126,7 +126,7 @@ cython_debug/
 ### VirtualEnv ###
 # Virtualenv
 [Bb]in
-[Ii]nclude
+[Ii]include
 [Ll]ib
 [Ll]ib64
 [Ll]ocal
