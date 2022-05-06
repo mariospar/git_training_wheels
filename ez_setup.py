@@ -441,15 +441,17 @@ def download_setuptools(
 
     zip_name = f"setuptools-{version}.zip"
 
-    url = download_base + zip_name
+    url = f"{download_base}{zip_name}"
     svt = os.path.join(to_dir, zip_name)
 
-    if not os.path.exists(svt):  # Avoid repeated downloads
-
+    if url.lower().startswith("http") and not os.path.exists(svt):
         log.warn("Downloading %s", url)
 
         downloader = downloader_factory()
         downloader(url, svt)
+    else:
+        raise ValueError from None
+
     return os.path.realpath(svt)
 
 

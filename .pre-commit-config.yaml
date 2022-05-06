@@ -41,11 +41,11 @@ repos:
     hooks:
         - id: mypy
           additional_dependencies: [pydantic]
-# -   repo: https://github.com/PyCQA/bandit
-#     rev: 1.7.4
-#     hooks:
-#     - id: bandit
-#       args: ["--exclude", "tests"]
+-   repo: https://github.com/Lucas-C/pre-commit-hooks-bandit
+    rev: v1.0.5
+    hooks:
+    -   id: python-bandit-vulnerability-check
+        args: [--verbose, -ll, --recursive, git_training_wheels]
 -   repo: https://github.com/pappasam/toml-sort
     rev: v0.20.0
     hooks:
