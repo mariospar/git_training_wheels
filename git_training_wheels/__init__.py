@@ -10,4 +10,6 @@ from sys import version_info
 if version_info < (3, 8, 0, "final", 0):
     raise SystemExit("Python 3.8 or later is required!")
 
-__version__ = "0.1.0"
+from . import _version
+
+__version__ = _version.get_versions()["version"]  # type: ignore[no-untyped-call]

@@ -71,8 +71,7 @@ style = [
     "fg:#858585 italic",
   ],
 ]
-version = "0.1.0"
-version_files = ["pyproject.toml:version"]
+version_files = ["git_training_wheels.__version__"]
 
 [tool.isort]
 force_grid_wrap = 0
@@ -109,6 +108,7 @@ pylint = "^2.13.7"
 pytest = "^7.1.2"
 pytest-cov = "^3.0.0"
 tox = "^3.25.0"
+versioneer = "^0.22"
 
 [tool.pylint.BASIC]
 argument-naming-style = 'snake_case'

@@ -184,3 +184,6 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# Skjold Output
+.skjold_cache
