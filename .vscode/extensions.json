@@ -1,0 +1,11 @@
+{
+	"recommendations": [
+		"njpwerner.autodocstring",
+		"aaron-bond.better-comments",
+		"streetsidesoftware.code-spell-checker",
+		"yzhang.markdown-all-in-one",
+		"davidanson.vscode-markdownlint",
+		"mintlify.document",
+		"KevinRose.vsc-python-indent"
+	]
+}
